@@ -1,0 +1,65 @@
+Fit.ly churn analysis — executive summary
+============================================
+
+Overall
+total_customers: 400
+churned_customers: 114
+active_customers: 286
+churn_rate: 0.285
+retention_rate: 0.7150000000000001
+active_mrr: 13177.0
+churned_mrr: 4408.48
+total_listed_mrr: 17585.48
+avg_price_active: 46.073426573426566
+avg_price_all: 43.963699999999996
+avg_support_tickets: 2.3
+avg_activities: 1.11
+avg_resolution_time: 10.399900000000002
+at_risk_customers: 41
+
+Churn by plan
+      Plan  Customers  Churned  Active  Churn Rate  Avg Price  Active MRR  Churned MRR
+      Free        105       43      62    0.409524       0.00        0.00         0.00
+     Basic        118       28      90    0.237288      19.87     1770.75       573.91
+       Pro         85       19      66    0.223529      53.74     3534.67      1033.23
+Enterprise         92       24      68    0.260870     116.01     7871.58      2801.34
+
+Churn by engagement
+   Engagement  Customers  Churned  Active  Churn Rate
+         High        105       17      88    0.161905
+       Medium        231       74     157    0.320346
+          Low         56       20      36    0.357143
+No Engagement          8        3       5    0.375000
+
+Recommendations
+P1: Fix Free-plan onboarding and the path to paid
+  Issue: Free churn is 41.0% (43 of 105 customers), above the Basic rate of 23.7%.
+  - Review the first-week Free experience for drop-off before the first activity.
+  - Add a time-boxed prompt that converts active Free users to Basic.
+  - Track Free churn weekly against the Basic churn rate.
+  Owner: Growth | Timeline: 30 days
+  Impact: Closing the gap with Basic on the 62 active Free customers is about 10.7 additional retained accounts. Revenue follows only if those accounts convert to a paid plan.
+
+P2: Re-engage active low and no-engagement customers
+  Issue: Low engagement churns at 35.7% and No Engagement at 37.5%. 41 active customers are still in those two levels, including 26 on a paid plan.
+  - Open a save playbook for the 41 active Low and No Engagement customers.
+  - Prioritize the paid subset, where a retained account still has monthly revenue.
+  - Pair outreach with a single activation task rather than a discount by default.
+  Owner: Customer Success | Timeline: 14 days
+  Impact: Moving the paid low/no-engagement churn rate from 25.7% toward 20.0% is about 1.5 saved customers, $81 MRR, and $1563 gross-margin LTV (24 months, 80% margin).
+
+P3: Nurture the Medium engagement cohort
+  Issue: Medium engagement holds 74 of 114 churned customers (64.9%) at a 32.0% rate. 157 Medium customers are still active.
+  - Build a lifecycle track for Medium customers who have not added a second activity.
+  - Flag Medium accounts whose support tickets are rising.
+  - Set a target to move Medium churn toward the High-engagement rate.
+  Owner: Lifecycle Marketing | Timeline: 45 days
+  Impact: A nurture program on the active Medium group addresses the largest slice of historical churn volume, even though its rate is below Low and No Engagement.
+
+P4: Increase product activity before accounts go quiet
+  Issue: Churned customers average 0.50 activities versus 1.35 for active customers (gap -0.85). Support tickets average 2.80 among churned customers and 2.10 among active customers.
+  - Instrument an activation checklist and alert when a paid account stays at zero activities.
+  - Route high-ticket, low-activity accounts to support before renewal.
+  - Do not use average resolution time alone to score risk; the separation is modest.
+  Owner: Product | Timeline: 60 days
+  Impact: Raising product activity among quiet accounts attacks the strongest simple association in this workbook. Resolution time is only a mild companion signal and should not be treated as a churn label.

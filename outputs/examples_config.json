@@ -1,0 +1,14 @@
+{
+  "data_path": "data/fitly_churn_analysis.xlsx",
+  "output_dir": "outputs",
+  "churn_threshold": 0.4,
+  "target_churn_rate": 0.2,
+  "lifetime_months": 24,
+  "cac": 50,
+  "gross_margin": 0.8,
+  "random_state": 42,
+  "n_estimators": 100,
+  "max_depth": 6,
+  "min_samples_leaf": 5,
+  "test_size": 0.25
+}

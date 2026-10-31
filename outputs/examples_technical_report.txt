@@ -1,0 +1,111 @@
+Fit.ly churn analysis — technical report
+==========================================
+
+Statistical tests
+plan_churn:
+feature: Plan
+test: chi-square
+chi2: 11.147196637864223
+statistic: 11.147196637864223
+p_value: 0.01095598229726408
+dof: 3
+cramers_v: 0.16693708873303306
+significant_at_0_05: True
+contingency_table:
+0:
+Basic: 90
+Enterprise: 68
+Free: 62
+Pro: 66
+1:
+Basic: 28
+Enterprise: 24
+Free: 43
+Pro: 19
+engagement_churn:
+feature: Engagement
+test: chi-square
+chi2: 10.97222819710858
+statistic: 10.97222819710858
+p_value: 0.011877000000265762
+dof: 3
+cramers_v: 0.1656217693806326
+significant_at_0_05: True
+contingency_table:
+0:
+High: 88
+Low: 36
+Medium: 157
+No Engagement: 5
+1:
+High: 17
+Low: 20
+Medium: 74
+No Engagement: 3
+support_tickets:
+feature: Support Tickets
+test: Welch t-test
+t_statistic: 5.080811981891431
+statistic: 5.080811981891431
+p_value: 8.770779252146311e-07
+mean_churned: 2.7982456140350878
+mean_active: 2.1013986013986012
+n_churned: 114
+n_active: 286
+significant_at_0_05: True
+activities:
+feature: Activities
+test: Welch t-test
+t_statistic: -10.4789649898138
+statistic: -10.4789649898138
+p_value: 1.3003883829929284e-22
+mean_churned: 0.5
+mean_active: 1.3531468531468531
+n_churned: 114
+n_active: 286
+significant_at_0_05: True
+
+Model
+accuracy: 0.85
+baseline_accuracy: 0.71
+roc_auc: 0.9096648858669257
+classification_report:               precision    recall  f1-score   support
+
+           0      0.841     0.972     0.902        71
+           1      0.889     0.552     0.681        29
+
+    accuracy                          0.850       100
+   macro avg      0.865     0.762     0.791       100
+weighted avg      0.855     0.850     0.838       100
+
+confusion_matrix:
+69
+2
+13
+16
+feature_importance:
+            feature  importance
+         Activities    0.310674
+              Price    0.210443
+Avg Resolution Time    0.201290
+    Support Tickets    0.133298
+         Engagement    0.077566
+               Plan    0.066730
+max_depth: 6
+min_samples_leaf: 5
+n_estimators: 100
+
+Held-out predictions
+Rows: 100
+Mean predicted churn probability: 0.3094
+Customer ID  churn_probability  predicted_churn  actual_churn
+     C10263           0.487488                0             1
+     C10222           0.420447                0             0
+     C10171           0.332012                0             0
+     C10090           0.113621                0             0
+     C10321           0.195466                0             0
+     C10199           0.381520                0             0
+     C10049           0.235950                0             0
+     C10239           0.061705                0             0
+     C10385           0.202386                0             0
+     C10293           0.158486                0             0

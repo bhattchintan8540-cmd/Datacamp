@@ -1,0 +1,9 @@
+{
+  "source": "data/fitly_churn_analysis.xlsx",
+  "validated": true,
+  "total_customers": 400,
+  "churned_customers": 114,
+  "churn_rate": 0.285,
+  "at_risk_customers": 41,
+  "generated_at": "2026-10-31T10:10:49.470276+00:00"
+}
